@@ -1,14 +1,43 @@
-<!-- JSON to CSV Converter -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON to CSV Converter</title>
+    <title>JSON to CSV Converter - Pro Edition</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>JSON to CSV Converter</h1>
+    <div class="container">
+        <div class="header">
+            <h1>📊 JSON to CSV Converter</h1>
+            <p class="subtitle">Transform JSON data into CSV format instantly</p>
+        </div>
+
+        <div class="converter-card">
+            <div class="input-section">
+                <label for="jsonInput">Paste JSON Data</label>
+                <textarea id="jsonInput" class="textarea" placeholder='[{"name":"John","age":30},{"name":"Jane","age":28}]' spellcheck="false"></textarea>
+                <div class="helper-text">Valid JSON array of objects required</div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary" id="convertBtn">Convert to CSV</button>
+                <button class="btn btn-secondary" id="clearBtn">Clear</button>
+            </div>
+
+            <div class="output-section" id="outputSection" style="display: none;">
+                <label for="csvOutput">CSV Output</label>
+                <textarea id="csvOutput" class="textarea" readonly></textarea>
+                <div class="button-group">
+                    <button class="btn btn-success" id="copyBtn">📋 Copy to Clipboard</button>
+                    <button class="btn btn-download" id="downloadBtn">⬇️ Download CSV</button>
+                </div>
+            </div>
+
+            <div class="status-message" id="statusMessage"></div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
