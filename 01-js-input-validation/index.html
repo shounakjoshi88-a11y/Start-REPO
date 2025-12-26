@@ -1,14 +1,55 @@
-<!-- JS Input Validation -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Input Validation</title>
+    <title>Input Validator Pro - Real-time Validation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Input Validation</h1>
+    <div class="container">
+        <div class="header">
+            <h1>✓ Input Validator Pro</h1>
+            <p class="subtitle">Real-time validation with instant feedback</p>
+        </div>
+
+        <div class="validator-card">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" class="input-field">
+                <span class="feedback-icon" id="emailIcon"></span>
+                <p class="feedback" id="emailFeedback"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter 10-digit number" class="input-field">
+                <span class="feedback-icon" id="phoneIcon"></span>
+                <p class="feedback" id="phoneFeedback"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Min 8 chars, 1 uppercase, 1 number" class="input-field">
+                <span class="feedback-icon" id="passwordIcon"></span>
+                <p class="feedback" id="passwordFeedback"></p>
+                <div class="strength-bar">
+                    <div class="strength-fill" id="strengthFill"></div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="url">Website URL</label>
+                <input type="url" id="url" placeholder="https://example.com" class="input-field">
+                <span class="feedback-icon" id="urlIcon"></span>
+                <p class="feedback" id="urlFeedback"></p>
+            </div>
+
+            <button class="submit-btn" id="submitBtn">Validate All</button>
+            <p class="reset-link" id="resetLink">Clear All</p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
