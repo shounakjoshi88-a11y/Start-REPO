@@ -3,50 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Validator Pro - Real-time Validation</title>
+    <title>Validator Pro | Ultimate Form Validation</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
     <div class="container">
-        <div class="header">
-            <h1>✓ Input Validator Pro</h1>
-            <p class="subtitle">Real-time validation with instant feedback</p>
-        </div>
-
-        <div class="validator-card">
-            <div class="input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="Enter your email" class="input-field">
-                <span class="feedback-icon" id="emailIcon"></span>
-                <p class="feedback" id="emailFeedback"></p>
-            </div>
-
-            <div class="input-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="Enter 10-digit number" class="input-field">
-                <span class="feedback-icon" id="phoneIcon"></span>
-                <p class="feedback" id="phoneFeedback"></p>
-            </div>
-
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Min 8 chars, 1 uppercase, 1 number" class="input-field">
-                <span class="feedback-icon" id="passwordIcon"></span>
-                <p class="feedback" id="passwordFeedback"></p>
-                <div class="strength-bar">
-                    <div class="strength-fill" id="strengthFill"></div>
+        <div class="glass-card">
+            <div class="header">
+                <div class="logo-area">
+                    <i class="fa-solid fa-shield-halved logo-icon"></i>
+                    <h1>Validator<span class="highlight">Pro</span></h1>
                 </div>
+                <p class="subtitle">Secure, real-time input verification</p>
             </div>
 
-            <div class="input-group">
-                <label for="url">Website URL</label>
-                <input type="url" id="url" placeholder="https://example.com" class="input-field">
-                <span class="feedback-icon" id="urlIcon"></span>
-                <p class="feedback" id="urlFeedback"></p>
-            </div>
+            <form id="validatorForm" novalidate>
+                <!-- Email Group -->
+                <div class="input-group">
+                    <label for="email"><i class="fa-regular fa-envelope"></i> Email Address</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" placeholder="john@example.com" autocomplete="off">
+                        <i class="fa-solid fa-circle-check status-icon success"></i>
+                        <i class="fa-solid fa-circle-exclamation status-icon error"></i>
+                    </div>
+                    <p class="feedback-msg" id="emailFeedback"></p>
+                </div>
 
-            <button class="submit-btn" id="submitBtn">Validate All</button>
-            <p class="reset-link" id="resetLink">Clear All</p>
+                <!-- Phone Group -->
+                <div class="input-group">
+                    <label for="phone"><i class="fa-solid fa-phone"></i> Phone Number</label>
+                    <div class="input-wrapper">
+                        <input type="tel" id="phone" placeholder="98765 43210" maxlength="10">
+                        <i class="fa-solid fa-circle-check status-icon success"></i>
+                        <i class="fa-solid fa-circle-exclamation status-icon error"></i>
+                    </div>
+                    <p class="feedback-msg" id="phoneFeedback"></p>
+                </div>
+
+                <!-- Password Group -->
+                <div class="input-group">
+                    <label for="password"><i class="fa-solid fa-lock"></i> Secure Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" placeholder="••••••••">
+                        <button type="button" class="toggle-password" id="togglePassword">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="strength-meter">
+                        <div class="bar" id="strengthBar"></div>
+                    </div>
+                    <p class="strength-text" id="strengthText">Strength: Weak</p>
+                    <ul class="requirements-list">
+                        <li id="req-len"><i class="fa-solid fa-circle"></i> 8+ Characters</li>
+                        <li id="req-num"><i class="fa-solid fa-circle"></i> Contains Number</li>
+                        <li id="req-sym"><i class="fa-solid fa-circle"></i> Special Symbol</li>
+                    </ul>
+                </div>
+
+                <!-- URL Group -->
+                <div class="input-group">
+                    <label for="url"><i class="fa-solid fa-link"></i> Portfolio URL</label>
+                    <div class="input-wrapper">
+                        <input type="url" id="url" placeholder="https://github.com/yourname">
+                        <i class="fa-solid fa-circle-check status-icon success"></i>
+                        <i class="fa-solid fa-circle-exclamation status-icon error"></i>
+                    </div>
+                    <p class="feedback-msg" id="urlFeedback"></p>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span>Verify Inputs</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                    <button type="button" class="reset-btn" id="resetBtn">Clear All</button>
+                </div>
+            </form>
         </div>
     </div>
 
